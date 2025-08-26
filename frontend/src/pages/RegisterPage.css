@@ -1,0 +1,332 @@
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-700) 100%);
+  padding: var(--spacing-4);
+}
+
+.register-container {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-8);
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid var(--gray-200);
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.register-header h1 {
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-2);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.register-header p {
+  color: var(--gray-600);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: var(--spacing-2);
+  font-weight: 500;
+  color: var(--gray-800);
+  font-size: 0.875rem;
+}
+
+.form-control {
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  background-color: white;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1);
+}
+
+.form-control.error {
+  border-color: var(--red-500);
+}
+
+.form-control.error:focus {
+  box-shadow: 0 0 0 3px rgb(239 68 68 / 0.1);
+}
+
+.form-control:disabled {
+  background-color: var(--gray-100);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-container .form-control {
+  padding-right: 3rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: var(--spacing-3);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-1);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle:hover:not(:disabled) {
+  background-color: var(--gray-100);
+}
+
+.password-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.form-hint {
+  color: var(--gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--spacing-1);
+}
+
+.error-message {
+  color: var(--red-600);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-1);
+}
+
+.form-error {
+  background-color: var(--red-50);
+  color: var(--red-800);
+  padding: var(--spacing-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--red-200);
+  font-size: 0.875rem;
+}
+
+/* Password Strength Indicator */
+.password-strength {
+  margin-top: var(--spacing-2);
+}
+
+.strength-bar {
+  height: 4px;
+  background-color: var(--gray-200);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: var(--spacing-2);
+}
+
+.strength-fill {
+  height: 100%;
+  transition: width var(--transition-normal), background-color var(--transition-normal);
+  border-radius: var(--radius-sm);
+}
+
+.strength-fill.strength-1 {
+  background-color: var(--red-500);
+}
+
+.strength-fill.strength-2 {
+  background-color: var(--yellow-600);
+}
+
+.strength-fill.strength-3 {
+  background-color: var(--yellow-500);
+}
+
+.strength-fill.strength-4 {
+  background-color: var(--green-500);
+}
+
+.strength-fill.strength-5 {
+  background-color: var(--green-600);
+}
+
+.strength-requirements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-1);
+}
+
+.strength-requirements small {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+
+.strength-requirements small.valid {
+  color: var(--green-600);
+}
+
+.strength-requirements small.invalid {
+  color: var(--gray-500);
+}
+
+.register-btn {
+  padding: var(--spacing-3) var(--spacing-6);
+  background-color: var(--primary-600);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  min-height: 48px;
+}
+
+.register-btn:hover:not(:disabled) {
+  background-color: var(--primary-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.register-btn:disabled {
+  background-color: var(--gray-400);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.register-footer {
+  text-align: center;
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--gray-200);
+}
+
+.register-footer p {
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.login-link {
+  color: var(--primary-600);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.login-link:hover {
+  color: var(--primary-700);
+  text-decoration: underline;
+}
+
+/* Loading state */
+.register-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-700) 100%);
+  color: white;
+}
+
+.register-loading p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-page {
+    padding: var(--spacing-2);
+  }
+  
+  .register-container {
+    padding: var(--spacing-6);
+    margin: var(--spacing-2);
+  }
+  
+  .register-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .form-control {
+    padding: var(--spacing-3);
+  }
+  
+  .register-btn {
+    padding: var(--spacing-3) var(--spacing-5);
+  }
+  
+  .strength-requirements {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .register-btn {
+    transition: none;
+  }
+  
+  .register-btn:hover:not(:disabled) {
+    transform: none;
+  }
+  
+  .strength-fill {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .register-container {
+    border: 2px solid var(--gray-900);
+  }
+  
+  .form-control {
+    border: 2px solid var(--gray-700);
+  }
+  
+  .form-control:focus {
+    border: 2px solid var(--primary-600);
+  }
+  
+  .strength-bar {
+    border: 1px solid var(--gray-700);
+  }
+}

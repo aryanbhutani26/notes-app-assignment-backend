@@ -1,0 +1,136 @@
+/* Protected Route Styles */
+
+.protected-route {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.protected-route[data-authenticated="true"] {
+  /* Styles for authenticated users */
+}
+
+.protected-route[data-authenticated="false"] {
+  /* Styles for unauthenticated users */
+}
+
+/* Loading states */
+.protected-route-loading,
+.route-guard-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-8);
+  background-color: var(--gray-50);
+}
+
+.protected-route-loading p,
+.route-guard-loading p {
+  color: var(--gray-600);
+  margin: 0;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Unauthorized access styles */
+.unauthorized-access {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--spacing-8);
+  background-color: var(--gray-50);
+}
+
+.unauthorized-content {
+  text-align: center;
+  max-width: 500px;
+  padding: var(--spacing-8);
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.unauthorized-content h1 {
+  color: var(--red-600);
+  font-size: 2rem;
+  margin-bottom: var(--spacing-4);
+  font-weight: 600;
+}
+
+.unauthorized-content p {
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-6);
+  line-height: 1.6;
+}
+
+.unauthorized-content .btn {
+  margin-top: var(--spacing-4);
+}
+
+/* Animation for loading states */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.protected-route-loading,
+.route-guard-loading,
+.unauthorized-access {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .protected-route-loading,
+  .route-guard-loading,
+  .unauthorized-access {
+    padding: var(--spacing-4);
+  }
+  
+  .unauthorized-content {
+    padding: var(--spacing-6);
+    margin: var(--spacing-4);
+  }
+  
+  .unauthorized-content h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Focus management for accessibility */
+.protected-route:focus-within {
+  outline: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .protected-route-loading,
+  .route-guard-loading {
+    background-color: white;
+    border: 2px solid var(--gray-900);
+  }
+  
+  .unauthorized-content {
+    border: 2px solid var(--gray-900);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .protected-route-loading,
+  .route-guard-loading,
+  .unauthorized-access {
+    animation: none;
+  }
+}

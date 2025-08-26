@@ -1,0 +1,137 @@
+/* Virtualized List Styles */
+
+.virtualized-list {
+  position: relative;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-400) var(--gray-100);
+}
+
+.virtualized-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.virtualized-list::-webkit-scrollbar-track {
+  background: var(--gray-100);
+  border-radius: var(--radius-full);
+}
+
+.virtualized-list::-webkit-scrollbar-thumb {
+  background: var(--gray-400);
+  border-radius: var(--radius-full);
+}
+
+.virtualized-list::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-500);
+}
+
+.virtualized-list-inner {
+  position: relative;
+}
+
+.virtualized-list-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.virtualized-list-item {
+  position: relative;
+}
+
+/* Virtualized Grid Styles */
+.virtualized-grid {
+  position: relative;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-400) var(--gray-100);
+}
+
+.virtualized-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.virtualized-grid::-webkit-scrollbar-track {
+  background: var(--gray-100);
+  border-radius: var(--radius-full);
+}
+
+.virtualized-grid::-webkit-scrollbar-thumb {
+  background: var(--gray-400);
+  border-radius: var(--radius-full);
+}
+
+.virtualized-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-500);
+}
+
+.virtualized-grid-inner {
+  position: relative;
+}
+
+/* Performance optimizations */
+.virtualized-list,
+.virtualized-grid {
+  /* Enable hardware acceleration */
+  transform: translateZ(0);
+  will-change: scroll-position;
+}
+
+.virtualized-list-content,
+.virtualized-grid-inner {
+  /* Optimize for frequent repaints */
+  contain: layout style paint;
+}
+
+/* Smooth scrolling for better UX */
+@media (prefers-reduced-motion: no-preference) {
+  .virtualized-list,
+  .virtualized-grid {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .virtualized-list::-webkit-scrollbar,
+  .virtualized-grid::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .virtualized-list::-webkit-scrollbar-thumb,
+  .virtualized-grid::-webkit-scrollbar-thumb {
+    background: var(--gray-700);
+  }
+  
+  .virtualized-list::-webkit-scrollbar-track,
+  .virtualized-grid::-webkit-scrollbar-track {
+    background: var(--gray-200);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .virtualized-list,
+  .virtualized-grid {
+    scrollbar-color: var(--gray-600) var(--gray-800);
+  }
+  
+  .virtualized-list::-webkit-scrollbar-track,
+  .virtualized-grid::-webkit-scrollbar-track {
+    background: var(--gray-800);
+  }
+  
+  .virtualized-list::-webkit-scrollbar-thumb,
+  .virtualized-grid::-webkit-scrollbar-thumb {
+    background: var(--gray-600);
+  }
+  
+  .virtualized-list::-webkit-scrollbar-thumb:hover,
+  .virtualized-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+  }
+}

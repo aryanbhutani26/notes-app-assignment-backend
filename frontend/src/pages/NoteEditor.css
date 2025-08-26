@@ -1,0 +1,389 @@
+.note-editor-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.note-editor-main {
+  padding-top: 80px;
+}
+
+.note-editor-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+/* Editor Header */
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 2rem 0 1rem;
+}
+
+.editor-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #6c757d;
+}
+
+.back-btn:hover {
+  background: #f8f9fa;
+  border-color: #adb5bd;
+  color: #495057;
+}
+
+.editor-title h1 {
+  margin: 0;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auto-save-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  cursor: pointer;
+  user-select: none;
+}
+
+.auto-save-toggle input[type="checkbox"] {
+  margin: 0;
+}
+
+.save-status {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.save-status.saved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.save-status.unsaved {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* Error Display */
+.editor-error {
+  margin-bottom: 2rem;
+}
+
+/* Conflict Resolution */
+.conflict-resolution {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.conflict-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.conflict-header svg {
+  color: #856404;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.conflict-header h3 {
+  margin: 0 0 0.5rem 0;
+  color: #856404;
+  font-size: 1.1rem;
+}
+
+.conflict-header p {
+  margin: 0;
+  color: #856404;
+  font-size: 0.95rem;
+}
+
+.conflict-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Editor Form */
+.editor-form {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.title-input {
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.title-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.content-textarea {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 400px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-control.error {
+  border-color: #dc3545;
+}
+
+.form-control:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.character-count {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 0;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+/* Editor Footer */
+.editor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 1px solid #e1e5e9;
+  margin-top: 2rem;
+}
+
+.editor-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.keyboard-shortcuts {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.keyboard-shortcuts kbd {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 3px;
+  padding: 0.1rem 0.3rem;
+  font-size: 0.75rem;
+  font-family: monospace;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .note-editor-main {
+    padding-top: 70px;
+  }
+  
+  .editor-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  
+  .editor-title h1 {
+    font-size: 1.75rem;
+  }
+  
+  .editor-actions {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .auto-save-toggle {
+    order: 1;
+  }
+  
+  .save-status {
+    order: 2;
+  }
+  
+  .btn {
+    order: 3;
+  }
+  
+  .editor-form {
+    padding: 1.5rem;
+  }
+  
+  .title-input {
+    font-size: 1.1rem;
+    padding: 0.875rem;
+  }
+  
+  .content-textarea {
+    padding: 0.875rem;
+    min-height: 300px;
+  }
+  
+  .editor-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .conflict-actions {
+    flex-direction: column;
+  }
+  
+  .conflict-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .editor-title {
+    gap: 0.75rem;
+  }
+  
+  .editor-title h1 {
+    font-size: 1.5rem;
+  }
+  
+  .back-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .editor-form {
+    padding: 1rem;
+  }
+  
+  .btn {
+    padding: 0.625rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .character-count {
+    bottom: -1.25rem;
+    font-size: 0.75rem;
+  }
+  
+  .keyboard-shortcuts {
+    display: none;
+  }
+}

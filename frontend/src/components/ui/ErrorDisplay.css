@@ -1,0 +1,399 @@
+/* Error Display Component Styles */
+
+.error-display {
+  /* Base error display styles */
+}
+
+.error-message {
+  color: var(--red-600);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-1);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-1);
+}
+
+.error-icon {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  margin-top: 0.125rem;
+}
+
+.error-text {
+  flex: 1;
+}
+
+/* Field-specific error styles */
+.field-error {
+  margin-top: var(--spacing-1);
+  margin-bottom: var(--spacing-2);
+}
+
+/* Form-level error styles */
+.form-error {
+  background-color: var(--red-50);
+  border: 1px solid var(--red-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+  position: relative;
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.form-error-dismiss {
+  position: absolute;
+  top: var(--spacing-2);
+  right: var(--spacing-2);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--red-600);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.form-error-dismiss:hover {
+  background-color: var(--red-100);
+}
+
+.form-error-icon {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  color: var(--red-600);
+}
+
+.form-error-content {
+  flex: 1;
+  color: var(--red-800);
+}
+
+.form-error-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-2);
+}
+
+.form-error-message {
+  font-weight: 500;
+}
+
+.form-error-list {
+  margin: 0;
+  padding-left: var(--spacing-4);
+}
+
+.form-error-item {
+  margin-bottom: var(--spacing-1);
+}
+
+/* Success message styles */
+.success-message {
+  background-color: var(--green-50);
+  border: 1px solid var(--green-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3);
+  color: var(--green-800);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  position: relative;
+}
+
+.success-message-dismiss {
+  position: absolute;
+  top: var(--spacing-1);
+  right: var(--spacing-1);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--green-600);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.success-message-dismiss:hover {
+  background-color: var(--green-100);
+}
+
+.success-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.success-text {
+  flex: 1;
+  font-weight: 500;
+}
+
+/* Warning message styles */
+.warning-message {
+  background-color: var(--yellow-50);
+  border: 1px solid var(--yellow-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3);
+  color: var(--yellow-800);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  position: relative;
+}
+
+.warning-message-dismiss {
+  position: absolute;
+  top: var(--spacing-1);
+  right: var(--spacing-1);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--yellow-600);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.warning-message-dismiss:hover {
+  background-color: var(--yellow-100);
+}
+
+.warning-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.warning-text {
+  flex: 1;
+  font-weight: 500;
+}
+
+/* Info message styles */
+.info-message {
+  background-color: var(--primary-50);
+  border: 1px solid var(--primary-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3);
+  color: var(--primary-800);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  position: relative;
+}
+
+.info-message-dismiss {
+  position: absolute;
+  top: var(--spacing-1);
+  right: var(--spacing-1);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--primary-600);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.info-message-dismiss:hover {
+  background-color: var(--primary-100);
+}
+
+.info-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.info-text {
+  flex: 1;
+  font-weight: 500;
+}
+
+/* Validation summary styles */
+.validation-summary {
+  margin-bottom: var(--spacing-6);
+}
+
+/* Password strength indicator styles */
+.password-strength {
+  margin-top: var(--spacing-2);
+}
+
+.strength-bar {
+  height: 4px;
+  background-color: var(--gray-200);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: var(--spacing-2);
+}
+
+.strength-fill {
+  height: 100%;
+  transition: width var(--transition-normal), background-color var(--transition-normal);
+  border-radius: var(--radius-sm);
+}
+
+.strength-fill.strength-none {
+  background-color: var(--gray-300);
+  width: 0%;
+}
+
+.strength-fill.strength-weak {
+  background-color: var(--red-500);
+}
+
+.strength-fill.strength-fair {
+  background-color: var(--yellow-600);
+}
+
+.strength-fill.strength-medium {
+  background-color: var(--yellow-500);
+}
+
+.strength-fill.strength-strong {
+  background-color: var(--green-500);
+}
+
+.strength-label {
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-2);
+}
+
+.strength-text {
+  font-weight: 600;
+}
+
+.strength-text.strength-none {
+  color: var(--gray-500);
+}
+
+.strength-text.strength-weak {
+  color: var(--red-600);
+}
+
+.strength-text.strength-fair {
+  color: var(--yellow-700);
+}
+
+.strength-text.strength-medium {
+  color: var(--yellow-600);
+}
+
+.strength-text.strength-strong {
+  color: var(--green-600);
+}
+
+.strength-requirements {
+  margin-top: var(--spacing-2);
+}
+
+.strength-requirements-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-1);
+}
+
+.strength-requirements-list {
+  margin: 0;
+  padding-left: var(--spacing-4);
+  font-size: 0.75rem;
+  color: var(--gray-600);
+}
+
+.strength-requirement {
+  margin-bottom: var(--spacing-1);
+}
+
+/* Inline validation styles */
+.inline-validation {
+  margin-top: var(--spacing-1);
+}
+
+.inline-error {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.inline-success {
+  font-size: 0.75rem;
+  margin: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--green-600);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .form-error {
+    padding: var(--spacing-3);
+  }
+  
+  .form-error-icon {
+    font-size: 1rem;
+  }
+  
+  .success-message,
+  .warning-message,
+  .info-message {
+    padding: var(--spacing-2);
+  }
+}
+
+/* Animation for error messages */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-message,
+.form-error,
+.success-message,
+.warning-message,
+.info-message {
+  animation: slideIn 0.2s ease-out;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .form-error {
+    border: 2px solid var(--red-600);
+  }
+  
+  .success-message {
+    border: 2px solid var(--green-600);
+  }
+  
+  .warning-message {
+    border: 2px solid var(--yellow-600);
+  }
+  
+  .info-message {
+    border: 2px solid var(--primary-600);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .error-message,
+  .form-error,
+  .success-message,
+  .warning-message,
+  .info-message {
+    animation: none;
+  }
+  
+  .strength-fill {
+    transition: none;
+  }
+}

@@ -1,0 +1,177 @@
+/* Main App component styles */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Toast container customization */
+.toast-container {
+  z-index: 9999;
+}
+
+/* Custom toast styles */
+.Toastify__toast {
+  border-radius: var(--radius-lg);
+  font-family: inherit;
+  font-size: 0.875rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.Toastify__toast--success {
+  background-color: var(--green-50);
+  color: var(--green-800);
+  border-left: 4px solid var(--green-500);
+}
+
+.Toastify__toast--error {
+  background-color: var(--red-50);
+  color: var(--red-800);
+  border-left: 4px solid var(--red-500);
+}
+
+.Toastify__toast--info {
+  background-color: var(--primary-50);
+  color: var(--primary-800);
+  border-left: 4px solid var(--primary-500);
+}
+
+.Toastify__toast--warning {
+  background-color: var(--yellow-50);
+  color: var(--yellow-800);
+  border-left: 4px solid var(--yellow-500);
+}
+
+.Toastify__progress-bar {
+  height: 2px;
+}
+
+.Toastify__progress-bar--success {
+  background: var(--green-500);
+}
+
+.Toastify__progress-bar--error {
+  background: var(--red-500);
+}
+
+.Toastify__progress-bar--info {
+  background: var(--primary-500);
+}
+
+.Toastify__progress-bar--warning {
+  background: var(--yellow-500);
+}
+
+/* Loading states */
+.app-loading,
+.root-loading,
+.protected-route-loading,
+.public-route-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-8);
+}
+
+.app-loading h2,
+.root-loading h2,
+.protected-route-loading h2,
+.public-route-loading h2 {
+  color: var(--gray-700);
+  font-weight: 500;
+  margin-bottom: var(--spacing-2);
+}
+
+.app-loading p,
+.root-loading p,
+.protected-route-loading p,
+.public-route-loading p {
+  color: var(--gray-500);
+  margin: 0;
+  text-align: center;
+}
+
+/* Specific loading state styles */
+.protected-route-loading {
+  background-color: var(--gray-50);
+}
+
+.public-route-loading {
+  background-color: white;
+}
+
+/* Error boundary styles */
+.app-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  padding: var(--spacing-8);
+  text-align: center;
+}
+
+.app-error h1 {
+  color: var(--red-600);
+  font-size: 2rem;
+  margin-bottom: var(--spacing-2);
+}
+
+.app-error p {
+  color: var(--gray-600);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.app-error .btn {
+  margin-top: var(--spacing-4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .toast-container {
+    left: var(--spacing-4);
+    right: var(--spacing-4);
+    width: auto;
+  }
+  
+  .Toastify__toast {
+    margin-bottom: var(--spacing-2);
+    border-radius: var(--radius-md);
+  }
+  
+  .app-error {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+  
+  .app-error h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Focus management for accessibility */
+.App:focus-within {
+  outline: none;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary-600);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  z-index: 10000;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 6px;
+}
