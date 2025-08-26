@@ -10,7 +10,8 @@ def add_cors_middleware(app):
     """Add CORS middleware to the FastAPI app"""
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["http://localhost:3000", "http://localhost:8080"],  # Add your frontend URLs
+        allow_origins=["*"],  # Add your frontend URLs
+        # allow_origins=["http://localhost:3000", "http://localhost:8080"],  # Add your frontend URLs
         allow_credentials=True,
         allow_methods=["GET", "POST", "PUT", "DELETE"],
         allow_headers=["*"],
